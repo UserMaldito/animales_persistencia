@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Animales</title>
+</head>
+<body>
+    <h3>Detalles Animal</h3>
+    <ul>
+        <li>
+            ID: <span th:text="${animalSingle.Id}"></span>
+        </li>
+        <li>
+            Nombre: <span th:text="${animalSingle.Nombre}"></span>
+        </li>
+        <li>
+            Vida Media: <span th:text="${animalSingle.VidaMedia}"></span>
+        </li>
+        <li>
+            ¿Está Extinto?: <span th:text="${animalSingle.Extinto}"></span>
+        </li>
+    </ul>
+    <a href="/list">Volver al Listado</a>
+</body>
+</html>

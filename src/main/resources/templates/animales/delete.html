@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrar Animales</title>
+</head>
+<body>
+    <h3>¿Eliminar Animal?</h3>
+    <ul>
+        <li>
+            ID: <span th:text="${animalDelete.Id}"></span>
+        </li>
+        <li>
+            Nombre: <span th:text="${animalDelete.Nombre}"></span>
+        </li>
+        <li>
+            Vida Media: <span th:text="${animalDelete.VidaMedia}"></span>
+        </li>
+        <li>
+            ¿Está Extinto?: <span th:text="${animalDelete.Extinto}"></span>
+        </li>
+    </ul>
+    <form
+        action="#"
+        method="post"
+        th:action="@{/delete}"
+        th:object="${animalDelete}"
+        >
+        <input id="id" type="text" th:field="*{Id}" style="display: none;">
+        <input type="submit" value="Confirmar Borrado" />
+    </form>
+    <a href="/list">Volver al Listado</a>
+</body>
+</html>

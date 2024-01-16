@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación Animales</title>
+</head>
+<body>
+    <h3>Crear Animal</h3>
+    <br>
+    <br>
+    <form
+        action="#"
+        method="post"
+        th:action="@{/update}"
+        th:object="${animalUpdate}"
+        >
+        </br>
+        <input id="id" type="text" th:field="*{Id}" style="display: none;">
+        <br>
+        <label for="name">Nombre del Animal</label>
+        </br>
+        <input id="name" type="text" th:field="*{Nombre}">
+        </br></br>
+        <label for="vidamedia">Vida Media del Animal</label>
+        </br>
+        <input id="vidamedia" type="text" th:field="*{VidaMedia}">
+        </br>
+        </br>
+        <label for="extinto">¿Está Extinto?</label>
+        <input id="extinto" type="checkbox" th:field="*{Extinto}">
+        </br></br>
+        <input type="submit" value="Actualizar Animal">
+    </form>
+    <br>
+    <a href="/list">Volver al Listado</a>
+</body>
+</html>

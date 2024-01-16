@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado Animales</title>
+</head>
+<body>
+    <h3>Listado Animales</h3>
+    <a href="/createget">Crear(Subir) Nuevo Animal</a>
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Vida Media</th>
+                    <th scope="col">Extinto</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="listado:${animalList}">
+                    <td th:text="${listado.Id}"></td>
+                    <td th:text="${listado.Nombre}"></td>
+                    <td th:text="${listado.VidaMedia}"></td>
+                    <td th:text="${listado.Extinto}"></td>
+                    <td>
+                        <a th:href="'/single/' + ${listado.id}">Detalles</a>
+                        <a th:href="'/update/' + ${listado.id}">Editar</a>
+                        <a th:href="'/delete/' + ${listado.id}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <a href="/">Página Principal</a>
+</body>
+</html>
